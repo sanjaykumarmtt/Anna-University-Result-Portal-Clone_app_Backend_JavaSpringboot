@@ -12,8 +12,8 @@ import com.student.demo.entity.RESULT;
 
 @Repository
 public interface StRepository extends JpaRepository<RESULT,Integer>{
-	
-	@Query(value="SELECT *FROM RESULT WHERE DOB= :date AND reg_no= :regst",nativeQuery=true)
+//	                           RESULT
+	@Query(value="SELECT *FROM result WHERE DOB= :date AND reg_no= :regst",nativeQuery=true)
 	public  Optional<RESULT> getdataone(@Param("regst") long regst,@Param("date") LocalDate date);
 	
 }

@@ -80,6 +80,7 @@ public class StController {
 	@GetMapping("/getonedata")
 	public Optional<RESULT>  getonedata(@RequestParam long regi,@RequestParam @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)LocalDate date) throws StudentIdNotFound{
       
+		System.out.println(regi+" "+date);
 		if(sr.getonedata(regi,date).isPresent()) {
 			return sr.getonedata(regi,date);
 		}else {
